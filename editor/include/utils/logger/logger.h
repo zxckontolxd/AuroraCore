@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 #include "utils/logger/loggerStreamBuff.h"
 #include "utils/logger/nullBuff.h"
@@ -5,6 +7,10 @@
 #include <map>
 #include <memory>
 #include <utility>
+
+/*
+ * Partial documentation about logger in mainLogger.h
+*/
 
 namespace logger
 {
