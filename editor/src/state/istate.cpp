@@ -3,6 +3,7 @@
 IState::IState()
 {
     logger = MainLogger::get();
+    logger->info("test");
 }
 
 void IState::registerState(std::string eventName, IState *state)
@@ -16,6 +17,7 @@ void IState::registerState(std::string eventName, IState *state)
     }
 
     stateMap[eventName] = state;
+    //return;
 }
 
 IState* IState::changeState(std::string eventName)
@@ -32,4 +34,24 @@ IState* IState::changeState(std::string eventName)
 IState* IState::getNextState()
 {
     return nextState;
+}
+
+void IState::resetChanged()
+{
+    changed = false;
+}
+
+bool IState::getChangedFlag()
+{
+    return changed;
+}
+
+void IState::setName(std::string name)
+{
+    this->name = name;
+}
+
+std::string IState::getName()
+{
+    return name;
 }

@@ -18,14 +18,20 @@ private:
     bool changed = false;
     IState *nextState;
     std::map<std::string, IState*> stateMap;
+    std::string name;
 public:
     IState();
 
     virtual void update() = 0;
 
     void registerState(std::string eventName, IState *state);
+    void resetChanged();
+    void setName(std::string name);
+
+    bool getChangedFlag();
 
     IState* changeState(std::string eventName);
-
     IState* getNextState();
+
+    std::string getName();
 };

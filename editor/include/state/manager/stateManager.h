@@ -1,5 +1,9 @@
 #pragma once
 
+#include <map>
+#include "utils/logger/mainLogger.h"
+#include "state/istate.h"
+
 /*
  * state_manager.h - Core component for state management
  *
@@ -64,5 +68,16 @@
 
 class StateManager
 {
+private:
+    MainLogger *logger;
+    IState *currentState;
+    std::map<std::string, IState*> stateMap;
+public:
+    StateManager(std::string stateName, IState *baseState);
+    ~StateManager();
 
+    void registerState(std::string name, IState *state);
+    void changeState(std::string name);
+
+    void update();
 };
