@@ -1,6 +1,7 @@
 #pragma once
 
 #include <map>
+#include <SFML/Graphics.hpp>
 #include "utils/logger/mainLogger.h"
 #include "state/istate.h"
 
@@ -80,4 +81,6 @@ public:
     void changeState(std::string name);
 
     void update();
+
+    sf::RenderWindow* getWindow();
 };

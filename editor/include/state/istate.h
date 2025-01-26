@@ -3,6 +3,7 @@
 #include <iostream>
 #include <map>
 #include <cstdio>
+#include <SFML/Graphics.hpp>
 #include "utils/logger/mainLogger.h"
 
 /*
@@ -13,7 +14,9 @@
 
 class IState
 {
-private:
+protected:
+    sf::RenderWindow *window;
+
     MainLogger *logger;
     bool changed = false;
     IState *nextState;
@@ -34,4 +37,6 @@ public:
     IState* getNextState();
 
     std::string getName();
+
+    sf::RenderWindow* getWindow();
 };

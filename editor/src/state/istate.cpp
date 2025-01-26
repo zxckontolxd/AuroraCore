@@ -55,3 +55,8 @@ std::string IState::getName()
 {
     return name;
 }
+
+sf::RenderWindow* IState::getWindow()
+{
+    return window;
+}

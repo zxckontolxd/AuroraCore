@@ -54,3 +54,7 @@ void StateManager::update()
     }
 }
 
+sf::RenderWindow* StateManager::getWindow()
+{
+    return currentState->getWindow();
+}
